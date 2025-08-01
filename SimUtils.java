@@ -38,4 +38,8 @@ public class SimUtils {
     public double calcDistance(double pos1X, double pos1Y, double pos2X, double pos2Y) {
         return Math.sqrt(Math.pow(pos2X - pos1X, 2) + Math.pow(pos2Y - pos1Y, 2)); 
     }
+
+    public int randomRange(int max) {
+        return rng.nextInt(max); 
+    }
 }

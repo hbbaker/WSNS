@@ -15,4 +15,8 @@ public class Battery {
     public double getBatteryLife() {
         return batteryLife; 
     }
+
+    public void kill() {
+        batteryLife = 0.0; 
+    }
 }

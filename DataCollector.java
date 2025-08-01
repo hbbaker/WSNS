@@ -3,11 +3,13 @@
  */
 public class DataCollector extends Node {
 
+    private final int nodeID; 
     private double tempReading = 0.0; 
     private double pressureReading = 0.0; 
     private final double transmissionCost; 
     
-    public DataCollector(double initialX, double initialY, double batteryLife, double transmissionCost) {
+    public DataCollector(int id, double initialX, double initialY, double batteryLife, double transmissionCost) {
+        nodeID = id; 
         this.x = initialX; 
         this.y = initialY; 
         this.battery = new Battery(batteryLife);
@@ -39,9 +41,16 @@ public class DataCollector extends Node {
         return pressureReading; 
     }
 
-    public Double[] getReadings() {
-        battery.updateBatteryLife(battery.getBatteryLife() - transmissionCost);
-        return new Double[] {getTemp(), getPressure(), getX(), getY(), battery.getBatteryLife()}; 
+    public int getID() {
+        return nodeID; 
     }
-    
+
+    public DataPacket getReadings() {
+        if (battery.getBatteryLife() <= 0.0) {
+            return null; 
+        } else {
+            battery.updateBatteryLife(battery.getBatteryLife() - transmissionCost);
+            return new DataPacket(nodeID, getTemp(), getPressure(), getX(), getY(), battery.getBatteryLife()); 
+        } 
+    }
 }
