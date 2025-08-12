@@ -16,10 +16,6 @@
     - Batteries are used by all Node objects for power consumption data
     - SimUtils contains all of the necessary supplementary tools used by the Simulation class. Add support functionality here. 
     - To test bigger program outputs, pipe the output of running Main to a .txt file:    
-    ```
-    javac Main.java
-    ```
 
-    ``` 
-    java Main > output.txt
-    ```
+        javac Main.java
+        java Main > output.txt
