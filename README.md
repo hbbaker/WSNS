@@ -17,10 +17,10 @@
     - SimUtils contains all of the necessary supplementary tools used by the Simulation class. Add support functionality here. 
     - To test bigger program outputs, pipe the output of running Main to a .txt file: 
         
-    ```console
-        foo@bar:~$ javac Main.java
+    ```
+        javac Main.java
     ```
 
-    ```console 
-        foo@bar:~$ java Main > output.txt
+    ``` 
+        java Main > output.txt
     ```
